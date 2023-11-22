@@ -6,22 +6,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
-const materialModules = [
-  MatToolbarModule,
-  MatIconModule,
-  MatButtonModule
-];
+const materialModules = [MatToolbarModule, MatIconModule, MatButtonModule];
 
 @NgModule({
   declarations: [HeaderComponent],
-  imports: [
-    CommonModule,
-    BrowserAnimationsModule,
-    ...materialModules
-  ],
-  exports: [
-    HeaderComponent,
-    ...materialModules
-  ]
+  imports: [CommonModule, BrowserAnimationsModule, ...materialModules],
+  exports: [HeaderComponent, ...materialModules],
 })
-export class SharedModule { }
+export class SharedModule {}
