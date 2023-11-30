@@ -1,48 +1,28 @@
-<div class="container mx-auto">
-  <app-header></app-header>
-</div>
+<app-header></app-header>
 
-<!-- https://www.wix.com/blog -->
+<app-featured></app-featured>
 
-<!-- Bu section öne cikarilan tek bir yazi icin -->
-<!-- Daha sonra opsiyonel yapilabilir veya otomatik en son yüklenen yazi burda görünür. -->
-<section
-  style="
-    display: flex;
-    flex-direction: column;
-    max-width: 1400px;
-    padding: 10rem;
-    margin: 0 auto;
-  ">
-  <span>Lorem, ipsum dolor.</span>
-  <h1>Lorem ipsum dolor sit.</h1>
-  <p>Lorem ipsum dolor sit amet consectetur.</p>
+<section class="container mx-auto flex flex-col p-12">
+  <h2>Yazarın seçtikleri</h2>
+  <article class="grid md:grid-cols-2 gap-6 items-center my-12">
+    <div class="p-12 order-last md:order-first">
+      <span>Lorem, ipsum dolor.</span>
+      <h1>Lorem ipsum dolor sit.</h1>
+      <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+    <div class="bg-image" style="height: 340px"></div>
+  </article>
+  <article class="grid md:grid-cols-2 gap-6 items-center my-12">
+    <div class="p-12 order-last md:order-last">
+      <span>Lorem, ipsum dolor.</span>
+      <h1>Lorem ipsum dolor sit.</h1>
+      <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+    <div class="bg-image" style="height: 340px"></div>
+  </article>
 </section>
 
-<!-- Bu section top articles icin -->
-<!-- Burasi tiklanma ve okunma sayisina göre daha sonra ayarlanabilir veya öne cikarilmak istenen yazilar bu kisma eklenebilir. -->
-<section
-  style="
-    display: flex;
-    flex-direction: column;
-    max-width: 1400px;
-    padding: 10rem;
-    margin: 0 auto;
-  ">
-  <span>Lorem, ipsum dolor.</span>
-  <h1>Lorem ipsum dolor sit.</h1>
-  <p>Lorem ipsum dolor sit amet consectetur.</p>
-</section>
-
-<!-- Bu kisimda mevcut yazilar arasindan rastgele bir yazi gösterilebilir. -->
-<section
-  style="
-    display: flex;
-    flex-direction: column;
-    max-width: 1400px;
-    padding: 10rem;
-    margin: 0 auto;
-  ">
+<section class="container mx-auto flex flex-col bg-red-200 p-12">
   <span>Lorem, ipsum dolor.</span>
   <h1>Lorem ipsum dolor sit.</h1>
   <p>Lorem ipsum dolor sit amet consectetur.</p>
@@ -50,79 +30,31 @@
 
 <hr />
 
-<!-- Bu kisimda da yazarin sectikleri yazilar gösterilebilir. -->
-<section
-  style="
-    display: flex;
-    flex-direction: column;
-    max-width: 1400px;
-    padding: 10rem;
-    margin: 0 auto;
-  ">
+<section class="container mx-auto flex flex-col bg-orange-200 p-12">
   <span>Lorem, ipsum dolor.</span>
   <h1>Lorem ipsum dolor sit.</h1>
   <p>Lorem ipsum dolor sit amet consectetur.</p>
 </section>
 
-<!-- ara gecis icin bir container eklenebilir -->
-<section style="background-color: lightblue; height: 80vh"></section>
+<section class="bg-gray-950" style="height: 80vh"></section>
 
-<!-- Burasi da konularina göre yazilar listelenebilir. -->
-<section>
-  <h4>TOPIC 1</h4>
-  <hr />
-  <section
-    style="
-      display: flex;
-      flex-direction: column;
-      max-width: 1400px;
-      padding: 10rem;
-      margin: 0 auto;
-    ">
-    <span>Lorem, ipsum dolor.</span>
-    <h1>Lorem ipsum dolor sit.</h1>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
-  </section>
-  <h4>TOPIC 2</h4>
-  <hr />
-  <section
-    style="
-      display: flex;
-      flex-direction: column;
-      max-width: 1400px;
-      padding: 10rem;
-      margin: 0 auto;
-    ">
-    <span>Lorem, ipsum dolor.</span>
-    <h1>Lorem ipsum dolor sit.</h1>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
-  </section>
-  <h4>TOPIC 3</h4>
-  <hr />
-  <section
-    style="
-      display: flex;
-      flex-direction: column;
-      max-width: 1400px;
-      padding: 10rem;
-      margin: 0 auto;
-    ">
-    <span>Lorem, ipsum dolor.</span>
-    <h1>Lorem ipsum dolor sit.</h1>
-    <p>Lorem ipsum dolor sit amet consectetur.</p>
-  </section>
+<section class="container mx-auto p-12">
+  <div *ngFor="let i of [1, 2, 3]">
+    <h4>TOPIC {{ i }}</h4>
+    <hr />
+    <section class="grid grid-cols-3 gap-12">
+      <div class="p-6" *ngFor="let j of [1, 2, 3]">
+        <div class="bg-image" style="height: 160px"></div>
+        <div class="p-4">
+          <h1>Lorem ipsum dolor sit.</h1>
+          <p>Lorem ipsum dolor sit amet consectetur...</p>
+        </div>
+      </div>
+    </section>
+  </div>
 </section>
 
-<section
-  style="
-    display: flex;
-    color: white;
-    align-items: center;
-    justify-content: space-around;
-    background-color: black;
-    padding: 10rem;
-    margin: 0 auto;
-  ">
+<section class="flex text-white bg-black p-36 items-center justify-around">
   <h2>Never miss another article</h2>
   <div style="display: flex; flex-direction: column">
     <p>
