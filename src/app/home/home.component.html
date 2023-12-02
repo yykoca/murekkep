@@ -1,0 +1,41 @@
+<app-featured></app-featured>
+<app-top-articles></app-top-articles>
+
+<!-- Bu kisimda mevcut yazilar arasindan rastgele bir yazi gösterilebilir. -->
+<section class="container mx-auto flex flex-col bg-red-200 p-12">
+  <span>Lorem, ipsum dolor.</span>
+  <h1>Lorem ipsum dolor sit.</h1>
+  <p>Lorem ipsum dolor sit amet consectetur.</p>
+</section>
+<br />
+<hr />
+<br />
+<!-- Bu kisimda da yazarin sectikleri yazilar gösterilebilir. -->
+<section class="container mx-auto flex flex-col bg-orange-200 p-12">
+  <span>Lorem, ipsum dolor.</span>
+  <h1>Lorem ipsum dolor sit.</h1>
+  <p>Lorem ipsum dolor sit amet consectetur.</p>
+</section>
+
+<!-- ara gecis icin bir container eklenebilir -->
+<section class="bg-gray-950" style="height: 80vh"></section>
+
+<!-- Burasi da konularina göre yazilar listelenebilir. -->
+<section class="container mx-auto p-12">
+  <div *ngFor="let i of [1, 2, 3]">
+    <h4>TOPIC {{ i }}</h4>
+    <hr />
+    <section class="grid grid-cols-3 gap-12">
+      <div class="p-6" *ngFor="let j of [1, 2, 3]">
+        <div class="bg-image" style="height: 160px"></div>
+        <div class="p-4">
+          <h1>Lorem ipsum dolor sit.</h1>
+          <p>Lorem ipsum dolor sit amet consectetur...</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<app-email-subscription></app-email-subscription>
+<app-footer></app-footer>
