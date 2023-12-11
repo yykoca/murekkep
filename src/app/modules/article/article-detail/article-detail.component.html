@@ -1,0 +1,30 @@
+<section
+  *ngIf="article$ | async as article"
+  class="container mx-auto flex justify-center px-36 leading-relaxed">
+  <div class="p-24">
+    <h1 style="font-size: 42px" class="!leading-normal">
+      {{ article.article.title }}
+    </h1>
+    <p style="font-size: 22px" class="text-gray-600">
+      {{ article.article.description }}
+    </p>
+    <div class="p-4">
+      <span>
+        {{ article.article.readingTime | number: '1.0-0' }} dakika okuma süresi.
+        |
+        {{ article.article.createdAt | date: 'd MMM y' }}
+        tarihinde yayınlandı.
+      </span>
+    </div>
+    <div class="my-12 bg-image" style="height: 340px"></div>
+    <p
+      *ngFor="let paragraph of article.article.paragraphs"
+      class="!mt-6 indent-8 text-justify"
+      style="font-size: 20px">
+      {{ paragraph.content }}
+    </p>
+  </div>
+</section>
+<section class="bg-gray-200" style="height: 400px">
+  Yazar ile bilgiler ve email gönder bölümü olabilir.
+</section>
