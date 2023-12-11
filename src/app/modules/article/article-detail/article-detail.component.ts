@@ -12,7 +12,7 @@ import { Observable, switchMap } from 'rxjs';
   styleUrls: ['./article-detail.component.scss'],
 })
 export class ArticleDetailComponent {
-  article$: Observable<{ article: Article }> = this.route.paramMap.pipe(
+  article$: Observable<Article> = this.route.paramMap.pipe(
     switchMap((params: ParamMap) => {
       const slug: string | null = params.get('slug');
       return this.articleService.getArticle(slug);

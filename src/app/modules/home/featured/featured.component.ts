@@ -14,7 +14,7 @@ import { Observable, map } from 'rxjs';
 export class FeaturedComponent {
   featuredArticle$: Observable<Article> = this.articleService
     .getArticles()
-    .pipe(map(articles => articles.articles[0]));
+    .pipe(map(articles => articles[0]));
 
   constructor(private articleService: ArticleService) {}
 }

@@ -11,8 +11,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  articles$: Observable<{ articles: Article[] }> =
-    this.articleService.getArticles();
+  articles$: Observable<Article[]> = this.articleService.getArticles();
 
   constructor(private articleService: ArticleService) {}
 }

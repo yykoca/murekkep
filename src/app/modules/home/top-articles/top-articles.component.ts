@@ -11,8 +11,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./top-articles.component.scss'],
 })
 export class TopArticlesComponent {
-  topArticles$: Observable<{ articles: Article[] }> =
-    this.articleService.getArticles();
+  topArticles$: Observable<Article[]> = this.articleService.getArticles();
 
   constructor(private articleService: ArticleService) {}
 }

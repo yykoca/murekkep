@@ -3,7 +3,7 @@
 
 <ng-container *ngIf="articles$ | async as articles">
   <section
-    *ngFor="let article of articles.articles"
+    *ngFor="let article of articles"
     [routerLink]="['/article/', article.slug]"
     class="container mx-auto flex flex-col hover:text-orange-900 cursor-pointer p-12">
     <span>{{ article.slug }}</span>
@@ -40,7 +40,7 @@
       <h4>KONULARINA GÖRE => KONU: ...</h4>
       <hr />
       <section class="grid grid-cols-3 gap-12">
-        <div class="p-6" *ngFor="let article of articles.articles; index as i">
+        <div class="p-6" *ngFor="let article of articles; index as i">
           <div class="bg-image" style="height: 160px"></div>
           <div class="p-4">
             <h1>{{ article.title }}</h1>
