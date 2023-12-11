@@ -1,0 +1,34 @@
+<mat-toolbar class="container !mx-auto" style="height: 90px">
+  <span
+    [routerLink]="['/']"
+    class="text-2xl hover:text-orange-500 cursor-pointer"
+    >Blog Page</span
+  >
+  <span class="spacer"></span>
+  <div class="flex justify-end items-center">
+    <ul class="flex flex-row items-center justify-evenly text-sm">
+      <li
+        [routerLink]="['/']"
+        class="p-4 text-md cursor-pointer hover:text-orange-500">
+        Categories
+      </li>
+      <li
+        [routerLink]="['/']"
+        class="p-4 text-md cursor-pointer hover:text-orange-500">
+        Author
+      </li>
+      <li
+        [routerLink]="['/login']"
+        class="p-4 text-md cursor-pointer hover:text-orange-500">
+        Contact
+      </li>
+    </ul>
+    <mat-form-field appearance="outline" style="margin-bottom: -1.25em">
+      <input type="text" matInput placeholder="Search" />
+      <mat-icon matSuffix class="!p-4">search</mat-icon>
+    </mat-form-field>
+    <!-- <button mat-icon-button aria-label="Search icon">
+      <mat-icon>search</mat-icon>
+    </button> -->
+  </div>
+</mat-toolbar>

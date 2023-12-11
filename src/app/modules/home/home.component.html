@@ -1,0 +1,56 @@
+<app-featured></app-featured>
+<app-top-articles></app-top-articles>
+
+<ng-container *ngIf="articles$ | async as articles">
+  <section
+    *ngFor="let article of articles.articles"
+    [routerLink]="['/article/', article.slug]"
+    class="container mx-auto flex flex-col hover:text-orange-900 cursor-pointer p-12">
+    <span>{{ article.slug }}</span>
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.description }}</p>
+  </section>
+</ng-container>
+
+<!-- Bu kisimda mevcut yazilar arasindan rastgele bir yazi gösterilebilir. -->
+<section class="container mx-auto flex flex-col bg-red-200 p-12">
+  <span>Lorem, ipsum dolor.</span>
+  <h1>Lorem ipsum dolor sit.</h1>
+  <p>Lorem ipsum dolor sit amet consectetur.</p>
+</section>
+<br />
+<hr />
+<br />
+<!-- Bu kisimda da yazarin sectikleri yazilar gösterilebilir. -->
+<section
+  [routerLink]="['/article/article_title']"
+  class="container mx-auto flex flex-col bg-orange-200 hover:bg-orange-900 cursor-pointer p-12">
+  <span>Lorem, ipsum dolor.</span>
+  <h1>Lorem ipsum dolor sit.</h1>
+  <p>Lorem ipsum dolor sit amet consectetur.</p>
+</section>
+
+<!-- ara gecis icin bir container eklenebilir -->
+<section class="bg-gray-950" style="height: 80vh"></section>
+
+<!-- Burasi da konularina göre yazilar listelenebilir. -->
+<ng-container *ngIf="articles$ | async as articles">
+  <section class="container mx-auto p-12">
+    <div>
+      <h4>KONULARINA GÖRE => KONU: ...</h4>
+      <hr />
+      <section class="grid grid-cols-3 gap-12">
+        <div class="p-6" *ngFor="let article of articles.articles; index as i">
+          <div class="bg-image" style="height: 160px"></div>
+          <div class="p-4">
+            <h1>{{ article.title }}</h1>
+            <p>{{ article.description }}</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</ng-container>
+
+<app-email-subscription></app-email-subscription>
+<app-footer></app-footer>

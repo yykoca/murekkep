@@ -1,16 +1,48 @@
 import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 import { EmailSubscriptionComponent } from './email-subscription/email-subscription.component';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from '@app/shared/header/header.component';
+import { ContactComponent } from '@app/shared/contact/contact.component';
+import { FooterComponent } from '@app/shared/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-const materialModules = [MatToolbarModule, MatIconModule, MatButtonModule];
+const materialModules = [
+  MatToolbarModule,
+  MatIconModule,
+  MatButtonModule,
+  MatInputModule,
+  MatCardModule,
+];
 
 @NgModule({
-  declarations: [EmailSubscriptionComponent],
-  imports: [CommonModule, BrowserAnimationsModule, ...materialModules],
-  exports: [EmailSubscriptionComponent, ...materialModules],
+  declarations: [
+    ContactComponent,
+    EmailSubscriptionComponent,
+    FooterComponent,
+    HeaderComponent,
+  ],
+  imports: [
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ...materialModules,
+  ],
+  exports: [
+    ContactComponent,
+    EmailSubscriptionComponent,
+    FooterComponent,
+    HeaderComponent,
+    RouterModule,
+    ...materialModules,
+  ],
 })
 export class SharedModule {}
