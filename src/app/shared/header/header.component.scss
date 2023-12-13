@@ -1,3 +1,39 @@
+header {
+  position: fixed;
+  top: 0;
+}
+
+.header {
+  height: 98px;
+  transition: all;
+  transition-duration: 500ms;
+
+  span {
+    color: snow;
+  }
+  ul {
+    li {
+      color: snow;
+    }
+  }
+}
+
+.small {
+  height: 72px;
+  background-color: white;
+  transition: all;
+  transition-duration: 500ms;
+
+  span {
+    color: rgb(37 28 20);
+  }
+  ul {
+    li {
+      color: rgb(37 28 20);
+    }
+  }
+}
+
 mat-toolbar {
   background: none !important;
 }
