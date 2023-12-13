@@ -1,9 +1,5 @@
-import { Component } from '@angular/core';
-import {
-  Article,
-  ArticleService,
-} from '@app/modules/article/article-detail/article.service';
-import { Observable, map } from 'rxjs';
+import { Component, Input } from '@angular/core';
+import { Article } from '@app/modules/article/article-detail/article.service';
 
 // TODO Standalone component
 @Component({
@@ -12,9 +8,5 @@ import { Observable, map } from 'rxjs';
   styleUrls: ['./featured.component.scss'],
 })
 export class FeaturedComponent {
-  featuredArticle$: Observable<Article> = this.articleService
-    .getArticles()
-    .pipe(map(articles => articles[0]));
-
-  constructor(private articleService: ArticleService) {}
+  @Input({ required: true }) article!: Article;
 }

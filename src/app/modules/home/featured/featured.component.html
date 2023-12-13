@@ -1,5 +1,6 @@
+<!-- Bu section öne cikarilan tek bir yazi icin -->
+<!-- Daha sonra opsiyonel yapilabilir veya otomatik en son yüklenen yazi burda görünür. -->
 <section
-  *ngIf="featuredArticle$ | async as article"
   class="flex flex-col justify-center items-end h-screen bg-center bg-cover bg-no-repeat bg-fixed bg-blend-lighten bg-[url('/assets/desk-1869579_1920.jpg')]">
   <div
     [routerLink]="['/article/', article.slug]"
