@@ -1,6 +1,6 @@
 <section
   *ngIf="article$ | async as article"
-  class="container mx-auto flex justify-center px-36 leading-relaxed">
+  class="container mx-auto flex flex-col justify-center mt-36 px-36 leading-relaxed">
   <div class="p-24">
     <h1 style="font-size: 42px" class="!leading-normal">
       {{ article.title }}
@@ -8,14 +8,28 @@
     <p style="font-size: 22px" class="text-gray-600">
       {{ article.description }}
     </p>
-    <div class="p-4">
-      <span>
+    <div class="flex align-center py-4">
+      <mat-icon
+        class="mx-2"
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="schedule"></mat-icon>
+      <span class="text-gray-500">
         {{ article.readingTime | number: '1.0-0' }} dakika okuma süresi. |
+      </span>
+      <mat-icon
+        class="mx-2"
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="calendar_month"></mat-icon>
+      <span>
         {{ article.createdAt | date: 'd MMM y' }}
         tarihinde yayınlandı.
       </span>
     </div>
-    <div class="my-12 bg-image" style="height: 340px"></div>
+    <div
+      class="bg-center bg-cover bg-no-repeat bg-blend-lighten bg-[url('/assets/flower-4210320_1920.jpg')]"
+      style="height: 340px"></div>
     <p
       *ngFor="let paragraph of article.paragraphs"
       class="!mt-6 indent-8 text-justify"
