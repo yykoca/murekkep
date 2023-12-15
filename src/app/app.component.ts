@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,19 +7,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  public contentLoaded = false;
+
+  constructor(private router: Router) {}
+
   ngOnInit() {
+    const header = document.getElementsByClassName('header')[0];
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (event.url !== '/') {
+          header.classList.add('not-landing-page');
+        } else {
+          header.classList.remove('not-landing-page');
+        }
+      }
+    });
+
     window.addEventListener('scroll', function () {
       navbarScroll();
     });
-    function navbarScroll() {
+    const navbarScroll = () => {
       const y = window.scrollY;
       if (y > 100) {
-        const header = document.getElementsByClassName('header')[0];
+        this.contentLoaded = true;
         header.classList.add('small');
       } else if (y < 100) {
-        const header = document.getElementsByClassName('header')[0];
+        this.contentLoaded = false;
         header.classList.remove('small');
       }
-    }
+    };
   }
 }

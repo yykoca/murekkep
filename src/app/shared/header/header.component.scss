@@ -1,35 +1,39 @@
 header {
   position: fixed;
   top: 0;
-}
-
-.header {
+  z-index: 99;
   height: 98px;
   transition: all;
   transition-duration: 500ms;
 
-  span {
-    color: snow;
+  img.logo {
+    height: 70px;
+    filter: invert(1%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(80%);
   }
-  ul {
-    li {
-      color: snow;
+
+  &.small {
+    height: 72px;
+  }
+
+  &.small,
+  &.not-landing-page {
+    background-color: white;
+    transition: all;
+    transition-duration: 500ms;
+    box-shadow: 0 2px 6px rgba(26,27,34,.16), 0 0 3px rgba(26,27,34,.08);
+
+    img.logo {
+      filter: brightness(1%);
     }
-  }
-}
 
-.small {
-  height: 72px;
-  background-color: white;
-  transition: all;
-  transition-duration: 500ms;
-
-  span {
-    color: rgb(37 28 20);
-  }
-  ul {
-    li {
+    span {
       color: rgb(37 28 20);
+    }
+
+    ul {
+      li {
+        color: rgb(37 28 20);
+      }
     }
   }
 }
