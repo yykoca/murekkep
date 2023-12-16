@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import {
-  Article,
-  ArticleService,
-} from '@app/modules/article/article-detail/article.service';
+import { Article } from '@app/modules/article/article.model';
+import { ArticleService } from '@app/modules/article/article.service';
 import { Observable, switchMap } from 'rxjs';
 
 @Component({

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import {
-  Article,
-  ArticleService,
-} from '@app/modules/article/article-detail/article.service';
+import { Article } from '@app/modules/article/article.model';
+import { ArticleService } from '@app/modules/article/article.service';
 import { Observable } from 'rxjs';
 
 @Component({

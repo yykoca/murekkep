@@ -1,7 +1,7 @@
 <!-- Bu section top articles icin -->
 <!-- Burasi tiklanma ve okunma sayisina göre daha sonra ayarlanabilir veya öne cikarilmak istenen yazilar bu kisma eklenebilir. -->
 <section
-  *ngIf="topArticles$ | async as articles"
+  *ngIf="topArticles as articles"
   class="container mx-auto flex flex-col p-12">
   <h2>Yazarın seçtikleri</h2>
 

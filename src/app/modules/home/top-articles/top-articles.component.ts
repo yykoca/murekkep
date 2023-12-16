@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
-import {
-  Article,
-  ArticleService,
-} from '@app/modules/article/article-detail/article.service';
-import { Observable } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
+import { Article } from '@app/modules/article/article.model';
 
 @Component({
   selector: 'app-top-articles',
   templateUrl: './top-articles.component.html',
   styleUrls: ['./top-articles.component.scss'],
 })
-export class TopArticlesComponent {
-  topArticles$: Observable<Article[]> = this.articleService.getArticles();
+export class TopArticlesComponent implements OnInit {
+  @Input({ required: true }) topArticles!: Article[];
 
-  constructor(private articleService: ArticleService) {}
+  ngOnInit() {
+    this.topArticles = this.topArticles.filter(article =>
+      article.title.includes('1')
+    );
+  }
 }

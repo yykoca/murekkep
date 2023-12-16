@@ -1,6 +1,6 @@
 <ng-container *ngIf="articles$ | async as articles">
   <app-featured-article [article]="articles[0]"></app-featured-article>
-  <app-top-articles></app-top-articles>
+  <app-top-articles [topArticles]="articles"></app-top-articles>
 
   <section
     [routerLink]="['/article/', articles[2].slug]"
