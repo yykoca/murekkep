@@ -2,16 +2,18 @@ header {
   position: fixed;
   top: 0;
   z-index: 99;
-  height: 98px;
+  min-height: 98px;
   transition: all;
   transition-duration: 500ms;
 
-  img.logo {
-    height: 70px;
+  a {
+    img.logo {
+      height: 70px;
+    }
   }
 
   &.small {
-    height: 72px;
+    min-height: 72px;
   }
 
   &.small,
@@ -21,26 +23,28 @@ header {
     transition-duration: 500ms;
     box-shadow: 0 2px 6px rgba(26,27,34,.16), 0 0 3px rgba(26,27,34,.08);
 
-    img.logo {
-      filter: brightness(1%);
-    }
-
-    span {
-      color: rgb(37 28 20);
-    }
-
-    ul {
-      li {
-        color: rgb(37 28 20);
+    a {
+      img.logo {
+        filter: brightness(1%);
       }
     }
+
+    nav {
+      ul {
+        li {
+          a {
+            color: rgb(37 28 20);
+          }
+        }
+      }
+
+      button {
+        color: black;
+      }
+    }
+    span {
+      color: rgb(37 28 20) !important;
+    }
+
   }
-}
-
-mat-toolbar {
-  background: none !important;
-}
-
-.spacer {
-  flex: 1 1 auto;
 }

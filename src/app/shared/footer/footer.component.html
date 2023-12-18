@@ -1,8 +1,7 @@
 <footer class="flex flex-col">
   <section
-    class="2xl:container mx-auto grid grid-cols-3 gap-6"
-    style="min-height: 400px">
-    <div class="px-12">
+    class="2xl:container mx-auto grid grid-cols-2 md:grid-cols-3 w-full my-4">
+    <div class="flex flex-col p-6 items-end">
       <img
         src="/assets/logo-black.png"
         alt="logo"
@@ -10,34 +9,35 @@
         style="height: 72px" />
       <h3 style="font-size: 1.5rem; line-height: 1.5rem">Blog Page</h3>
     </div>
-    <div class="flex gap-6 justify-between py-6">
+    <div class="flex flex-col md:flex-row gap-2 md:justify-around p-6 border-s">
       <div>
-        <h4>Yazılar</h4>
+        <h4 class="text-orange-500">Yazılar</h4>
       </div>
       <div>
-        <h4>Şiirler</h4>
+        <h4 class="text-orange-500">Şiirler</h4>
       </div>
       <div>
-        <h4>Hakkımda</h4>
+        <h4 class="text-orange-500">Hakkımda</h4>
       </div>
       <div>
-        <h4>Başka bir bölüm</h4>
+        <h4 class="text-orange-500">İletişim</h4>
       </div>
     </div>
   </section>
-  <section class="2xl:container mx-auto grid grid-cols-3 gap-6 border-t">
-    <div class="flex items-center justify-start">
+  <section
+    class="2xl:container mx-auto grid grid-cols lg:grid-cols-3 lg:gap-6 border-t">
+    <div class="flex items-center justify-around lg:justify-start py-2">
       <i class="fab fa-twitter text-2xl mx-2"></i>
       <i class="fa-brands fa-instagram text-2xl mx-2"></i>
       <i class="fa-brands fa-facebook text-2xl mx-2"></i>
       <i class="fa-brands fa-linkedin-in text-2xl mx-2"></i>
     </div>
-    <ul class="flex items-center justify-around">
+    <ul class="flex items-center justify-around py-2">
       <li class="p-4">Privacy Policy</li>
       <li class="p-4">Legal Stuff</li>
       <li class="p-4">Accessibility</li>
     </ul>
-    <div class="flex items-center justify-end">
+    <div class="flex items-center justify-center lg:justify-end py-2">
       <span>Copyright © 2024 Yaşar Koca</span>
     </div>
   </section>

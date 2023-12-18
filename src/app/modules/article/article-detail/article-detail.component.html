@@ -1,39 +1,37 @@
 <ng-container *ngIf="article$ | async as article">
   <article
-    class="container mx-auto flex flex-col justify-center mt-36 px-36 leading-relaxed">
-    <div class="p-24">
-      <h1 style="font-size: 42px" class="!leading-normal">
+    class="container mx-auto flex flex-col justify-center mt-24 md:mt-16 xl:px-36 leading-relaxed">
+    <div class="md:p-24">
+      <h1 class="!leading-normal md:!text-4xl lg:!text-5xl p-4 !pb-0 !mb-0">
         {{ article.title }}
       </h1>
-      <p style="font-size: 22px" class="text-gray-600">
+      <p class="md:!text-xl lg:!text-2xl text-gray-600 p-4 !py-0 !mb-0">
         {{ article.description }}
       </p>
       <div class="flex align-center py-4">
         <mat-icon
-          class="mx-2"
+          class="ms-2 text-xs text-center"
           aria-hidden="false"
           aria-label="schedule"
           fontIcon="schedule"></mat-icon>
-        <span class="text-gray-500">
-          {{ article.readingTime | number: '1.0-0' }} dakika okuma süresi. |
+        <span class="text-xs text-gray-500">
+          {{ article.readingTime | number: '1.0-0' }} dk okuma
         </span>
         <mat-icon
-          class="mx-2"
+          class="ms-6 text-xs text-center"
           aria-hidden="false"
           aria-label="calendar"
           fontIcon="calendar_month"></mat-icon>
-        <span>
+        <span class="text-xs">
           {{ article.createdAt | date: 'd MMM y' }}
-          tarihinde yayınlandı.
         </span>
       </div>
       <div
-        class="bg-center bg-cover bg-no-repeat bg-blend-lighten bg-[url('/assets/flower-4210320_1920.jpg')]"
-        style="height: 340px"></div>
+        class="bg-left bg-cover bg-no-repeat bg-blend-lighten bg-[url('/assets/flower-4210320_1920.jpg')]"
+        style="height: 240px"></div>
       <p
         *ngFor="let paragraph of article.paragraphs"
-        class="!mt-6 indent-8 text-justify"
-        style="font-size: 20px">
+        class="!mt-6 indent-8 p-4 text-justify text-base lg:text-xl">
         {{ paragraph.content }}
       </p>
     </div>
@@ -41,7 +39,7 @@
   <section class="bg-gray-100 p-24">
     <div class="container mx-auto flex flex-col items-center justify-around">
       <div
-        class="bg-flower bg-cover bg-left rounded-full mb-4"
+        class="bg-profile bg-cover bg-center rounded-full mb-4"
         style="width: 80px; height: 80px"></div>
       <h3 style="font-size: 16px; line-height: 16px">Yaşar Koca</h3>
       <p style="font-size: 12px; line-height: 12px">

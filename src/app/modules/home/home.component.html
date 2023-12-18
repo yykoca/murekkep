@@ -4,34 +4,34 @@
 
   <section
     [routerLink]="['/article/', articles[2].slug]"
-    class="container mx-auto w-3/5 flex justify-between border my-12 group cursor-pointer">
+    class="container mx-auto md:w-4/5 xl:w-3/5 flex flex-col-reverse md:flex-row justify-between xl:border p-4 my-12 group cursor-pointer">
     <div class="flex-1 flex flex-col justify-center p-12">
       <span>{{ articles[2].slug }}</span>
       <h1 class="group-hover:text-orange-800">{{ articles[2].title }}</h1>
       <p>{{ articles[2].description }}</p>
     </div>
-    <div class="card-zoom" style="height: 240px; width: 360px">
+    <div class="card-zoom md:w-2/5" style="height: 240px">
       <div class="card-zoom-image bg-flower"></div>
     </div>
   </section>
 
   <section
     [routerLink]="['/article/', articles[1].slug]"
-    class="container mx-auto w-3/5 flex justify-between border my-12 group cursor-pointer">
+    class="container mx-auto md:w-4/5 xl:w-3/5 flex flex-col-reverse md:flex-row justify-between xl:border p-4 my-12 group cursor-pointer">
     <div class="flex-1 flex flex-col justify-center p-12">
       <span class="text-gray-400">Yaşar Koca tarafından kaleme alındı.</span>
       <h1 class="group-hover:text-orange-800">{{ articles[1].title }}</h1>
       <p>{{ articles[1].description }}</p>
     </div>
-    <div class="card-zoom" style="height: 240px; width: 360px">
+    <div class="card-zoom md:w-2/5" style="height: 240px">
       <div class="card-zoom-image bg-laptop"></div>
     </div>
   </section>
 
   <section
-    class="flex flex-col items-center p-20 text-center"
+    class="flex flex-col items-center py-12 p-4 xl:p-20 text-center"
     style="background-color: rgb(248, 236, 198); min-height: 280px">
-    <p class="w-3/5" style="font-size: 2rem; line-height: 2.5rem">
+    <p class="xl:w-3/5 text-base md:text-3xl font-serif">
       "Bana sor sevgili kâri', sana ben söyleyeyim, <br />
       Ne hüviyette şu karşında duran eş'ârım: <br />
       Bir yığın söz ki samîmiyyeti ancak hüneri; <br />
@@ -43,7 +43,7 @@
       Oku, şâyet sana bir hisli yürek lâzımsa; <br />
       Oku, zîrâ onu yazdım, iki söz yazdımsa." <br />
     </p>
-    <p class="w-2/5" style="font-size: 1.5rem; line-height: 2rem">
+    <p class="xl:w-2/5 text-sm font-black capitalize md:text-2xl font-serif">
       Mehmet Akif Ersoy, Vatan Şairi
     </p>
   </section>
@@ -51,12 +51,11 @@
   <div style="background-color: rgb(246 246 244)">
     <section class="container mx-auto p-12">
       <h4>YAZARIN TÜM YAZILARI</h4>
-      <hr />
-      <section class="flex overflow-x-scroll">
-        <div class="p-12" *ngFor="let article of articles; index as i">
+      <section class="flex gap-6 overflow-x-scroll">
+        <div *ngFor="let article of articles; index as i">
           <div
             class="bg-flower bg-left"
-            style="width: 360px; height: 180px"></div>
+            style="height: 180px; width: 300px"></div>
           <div class="p-6">
             <h1>{{ article.title }}</h1>
             <p>{{ article.description }}</p>

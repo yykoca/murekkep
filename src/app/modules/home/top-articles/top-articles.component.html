@@ -1,15 +1,13 @@
-<!-- Bu section top articles icin -->
-<!-- Burasi tiklanma ve okunma sayisina göre daha sonra ayarlanabilir veya öne cikarilmak istenen yazilar bu kisma eklenebilir. -->
 <section
   *ngIf="topArticles as articles"
-  class="container mx-auto flex flex-col p-12">
-  <h2>Yazarın seçtikleri</h2>
+  class="container mx-auto flex flex-col xl:p-12">
+  <h2 class="ps-4">Yazarın seçtikleri</h2>
 
   <article
     *ngFor="let article of articles; index as i"
-    class="grid md:grid-cols-2 gap-6 items-center my-12">
+    class="grid md:grid-cols-2 gap-6 items-center mb-12">
     <div
-      class="p-12 order-last"
+      class="p-4 xl:p-12 order-last"
       [ngClass]="i % 2 === 0 ? 'md:order-first' : 'md:order-last'">
       <span>{{ article.slug }}</span>
       <h1>{{ article.title }}</h1>

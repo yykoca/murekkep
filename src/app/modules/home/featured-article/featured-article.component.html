@@ -1,19 +1,16 @@
-<!-- Bu section öne cikarilan tek bir yazi icin -->
-<!-- Daha sonra opsiyonel yapilabilir veya otomatik en son yüklenen yazi burda görünür. -->
 <section
-  class="flex flex-col justify-center items-end h-screen bg-center bg-cover bg-no-repeat bg-fixed bg-blend-lighten bg-[url('/assets/desk-1869579_1920.jpg')]">
+  class="flex flex-col justify-center items-end h-screen bg-right bg-cover bg-no-repeat bg-fixed bg-blend-color-burn bg-desk">
   <div
     [routerLink]="['/article/', article.slug]"
-    class="text-white container p-24 w-3/5 hover:cursor-pointer group transition-all duration-300 ease-in-out">
-    <p style="font-size: 1.5rem; line-height: 1.5rem">
+    class="container text-white p-4 md:p-24 lg:w-3/5 hover:cursor-pointer group transition-all duration-300 ease-in-out">
+    <p class="!text-base md:!text-lg xl:!text-xl">
       Yazar tarafından öne çıkarılan yazı.
     </p>
     <h1
-      class="text-orange-500 group-hover:underline"
-      style="font-size: 5rem; line-height: 5rem">
+      class="!text-4xl md:!text-5xl xl:!text-6xl text-orange-500 group-hover:underline">
       {{ article.title }}
     </h1>
-    <p style="font-size: 2rem; line-height: 2rem">
+    <p class="!text-lg md:!text-xl xl:!text-2xl">
       {{ article.description }}
     </p>
   </div>
