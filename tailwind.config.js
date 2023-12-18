@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        laptop: "url('/assets/laptop-4840790_1280.jpg')",
-        flower: "url('/assets/flower-4210320_1920.jpg')",
-        desk: "url('/assets/desk-1869579_1920.jpg')",
+        laptop: "url('/assets/laptop.jpg')",
+        flower: "url('/assets/flower.jpg')",
+        desk: "url('/assets/desk.jpg')",
         profile: "url('/assets/profile.jpg')",
       }
     }
