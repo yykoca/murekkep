@@ -12,6 +12,7 @@ import {
 import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from '@app/modules/home';
 import { CoreModule } from '@app/core/core.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { CoreModule } from '@app/core/core.module';
     SharedModule,
     CoreModule,
     HomeModule,
+    FontAwesomeModule,
   ],
   providers: [
     { provide: LocationStrategy, useClass: PathLocationStrategy },
