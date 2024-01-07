@@ -7,3 +7,19 @@
 section:hover .card-zoom .card-zoom-image {
   @apply scale-110;
 }
+
+.article-container {
+  min-width: 350px;
+  position: relative;
+  top: 20px;
+  transition: all;
+  transition-duration: 700ms;
+
+  &:hover {
+    top: 0px;
+  }
+
+  & > div.article-image {
+    height: 200px;
+  }
+}
