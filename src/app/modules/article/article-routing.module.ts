@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArticleDetailComponent } from '@app/modules/article/article-detail/article-detail.component';
+import { ArticleComponent } from '@app/modules/article/article.component';
 
 const routes: Routes = [
   {
-    path: ':slug',
+    path: '',
+    component: ArticleComponent,
+  },
+  {
+    path: 'articles/:slug',
     component: ArticleDetailComponent,
   },
 ];

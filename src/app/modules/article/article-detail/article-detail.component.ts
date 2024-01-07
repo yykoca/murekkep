@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Article } from '@app/modules/article/article.model';
 import { ArticleService } from '@app/modules/article/article.service';
@@ -8,6 +8,7 @@ import { Observable, switchMap } from 'rxjs';
   selector: 'app-article-detail',
   templateUrl: './article-detail.component.html',
   styleUrls: ['./article-detail.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ArticleDetailComponent {
   article$: Observable<Article> = this.route.paramMap.pipe(

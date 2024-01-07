@@ -3,6 +3,8 @@ export type Article = {
   title: string;
   slug: string;
   description: string;
+  content: string;
+  image: string;
   paragraphs: Paragraph[];
   createdAt: Date;
   readingTime: number;
