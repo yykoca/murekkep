@@ -10,7 +10,6 @@ import { MatCardModule } from '@angular/material/card';
 import { EmailSubscriptionComponent } from './email-subscription/email-subscription.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '@app/shared/header/header.component';
-import { ContactComponent } from '@app/shared/contact/contact.component';
 import { FooterComponent } from '@app/shared/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
@@ -25,7 +24,6 @@ const materialModules = [
 
 @NgModule({
   declarations: [
-    ContactComponent,
     EmailSubscriptionComponent,
     FooterComponent,
     HeaderComponent,
@@ -39,7 +37,6 @@ const materialModules = [
     ...materialModules,
   ],
   exports: [
-    ContactComponent,
     EmailSubscriptionComponent,
     FooterComponent,
     HeaderComponent,
