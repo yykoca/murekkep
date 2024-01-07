@@ -2,9 +2,12 @@ header {
   position: fixed;
   top: 0;
   z-index: 99;
-  min-height: 98px;
-  transition: all;
-  transition-duration: 500ms;
+
+  .nav {
+    transition: all;
+    transition-duration: 500ms;
+    min-height: 98px;
+  }
 
   a {
     img.logo {
@@ -13,7 +16,9 @@ header {
   }
 
   &.small {
-    min-height: 72px;
+    .nav {
+      min-height: 72px !important;
+    }
   }
 
   &.small,
@@ -34,6 +39,10 @@ header {
         li {
           a {
             color: rgb(37 28 20);
+
+            &:hover {
+              color: rgb(249 115 22);;
+            }
           }
         }
       }
@@ -44,6 +53,10 @@ header {
     }
     span {
       color: rgb(37 28 20) !important;
+
+      &:hover {
+        color: rgb(249 115 22);;
+      }
     }
 
   }
