@@ -5,7 +5,7 @@
     <br />
     <section
       class="flex flex-wrap justify-around gap-2"
-      *ngIf="articles$ | async as articles">
+      *ngIf="articles$ | async as articles; else loading">
       <div
         *ngFor="let article of articles; index as i"
         class="flex flex-col"
@@ -22,5 +22,8 @@
         </div>
       </div>
     </section>
+    <ng-template #loading>
+      <app-loading></app-loading>
+    </ng-template>
   </section>
 </div>

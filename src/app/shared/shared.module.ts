@@ -13,6 +13,7 @@ import { HeaderComponent } from '@app/shared/header/header.component';
 import { FooterComponent } from '@app/shared/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
+import { LoadingComponent } from './loading/loading.component';
 
 const materialModules = [
   MatToolbarModule,
@@ -28,6 +29,7 @@ const materialModules = [
     FooterComponent,
     HeaderComponent,
     AboutComponent,
+    LoadingComponent,
   ],
   imports: [
     CommonModule,
@@ -41,6 +43,7 @@ const materialModules = [
     FooterComponent,
     HeaderComponent,
     RouterModule,
+    LoadingComponent,
     ...materialModules,
   ],
 })
