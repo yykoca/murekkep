@@ -5,26 +5,8 @@
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
 @font-face {
-  font-family: 'Ubuntu Mono';
-  src: url('assets/fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: 'Amita';
   src: url('assets/fonts/Amita/Amita-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('assets/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Lobster Two';
-  src: url('assets/fonts/Lobster_Two/LobsterTwo-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -37,6 +19,24 @@
 @font-face {
   font-family: 'Kings';
   src: url('assets/fonts/Kings/Kings-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lobster Two';
+  src: url('assets/fonts/Lobster_Two/LobsterTwo-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('assets/fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -62,7 +62,7 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 
-  h1 {
+  h1, h3 {
     font-family: 'Bree serif' !important;
   }
 
@@ -70,12 +70,8 @@ body {
     font-family: 'Yanone' !important;
   }
 
-  h4 {
+  h4, p, button {
     font-family: 'Exo 2' !important;
-  }
-
-  p {
-    font-family: 'Exo 2';
   }
 
   span.highlight-article {
