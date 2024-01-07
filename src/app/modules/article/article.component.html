@@ -1,0 +1,26 @@
+<div class="bg-graycolor p-12 mt-24">
+  <section class="container mx-auto">
+    <h4 class="!text-3xl">YAZARIN TÜM YAZILARI</h4>
+    <hr />
+    <br />
+    <section
+      class="flex flex-wrap justify-around gap-2"
+      *ngIf="articles$ | async as articles">
+      <div
+        *ngFor="let article of articles; index as i"
+        class="flex flex-col"
+        style="min-width: 350px; max-width: 350px">
+        <div
+          class="bg-cover bg-left"
+          [style.background-image]="
+            'url(\'/assets/' + article.image + '.jpg\')'
+          "
+          style="height: 180px"></div>
+        <div class="p-6">
+          <h1 class="!text-2xl">{{ article.title }}</h1>
+          <p class="!text-base !font-ubuntu">{{ article.description }}</p>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>

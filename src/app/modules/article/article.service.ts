@@ -7,20 +7,17 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root',
 })
 export class ArticleService {
-  private readonly articlesUrl = 'articles';
-  private readonly articleUrl = 'article';
+  private readonly url = 'articles';
 
   constructor(private apiService: ApiService) {}
 
   getArticles(): Observable<Article[]> {
     return this.apiService
-      .get<{ articles: Article[] }>(this.articlesUrl)
-      .pipe(map(data => data.articles));
+      .get<Article[]>(this.url)
+      .pipe(map((res: any) => res['hydra:member']));
   }
 
   getArticle(slug: string | null): Observable<Article> {
-    return this.apiService
-      .get<{ article: Article }>(this.articleUrl + '/' + slug)
-      .pipe(map(data => data.article));
+    return this.apiService.get<Article>(this.url + '/' + slug);
   }
 }
