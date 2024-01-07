@@ -2,36 +2,48 @@
   <app-featured-article [article]="articles[0]"></app-featured-article>
   <app-top-articles [topArticles]="articles"></app-top-articles>
 
-  <section
-    [routerLink]="['/article/', articles[2].slug]"
-    class="container mx-auto md:w-4/5 xl:w-3/5 flex flex-col-reverse md:flex-row justify-between xl:border p-4 my-12 group cursor-pointer">
-    <div class="flex-1 flex flex-col justify-center p-12">
-      <span>{{ articles[2].slug }}</span>
-      <h1 class="group-hover:text-orange-800">{{ articles[2].title }}</h1>
-      <p>{{ articles[2].description }}</p>
-    </div>
-    <div class="card-zoom md:w-2/5" style="height: 240px">
-      <div class="card-zoom-image bg-flower"></div>
-    </div>
-  </section>
+  <div class="md:px-36">
+    <section
+      [routerLink]="['/articles/', articles[2].slug]"
+      class="bg-white container mx-auto md:w-4/5 xl:w-3/5 flex flex-col-reverse md:flex-row justify-between xl:border border-darkblue hover:border-orange-500 my-12 group cursor-pointer">
+      <div class="flex-1 flex flex-col justify-center p-12">
+        <h1 class="group-hover:text-orange-500">
+          {{ articles[2].title }}
+        </h1>
+        <p>{{ articles[2].description }}</p>
+      </div>
+      <div class="card-zoom md:w-2/5" style="height: 240px">
+        <div
+          class="card-zoom-image"
+          [style.background-image]="
+            'url(\'/assets/' + articles[2].image + '.jpg\')'
+          "></div>
+      </div>
+    </section>
+
+    <section
+      [routerLink]="['/articles/', articles[1].slug]"
+      class="bg-white container mx-auto md:w-4/5 xl:w-3/5 flex flex-col-reverse md:flex-row justify-between xl:border border-darkblue hover:border-orange-500 my-12 group cursor-pointer">
+      <div class="flex-1 flex flex-col justify-center p-12">
+        <span class="text-gray-400">Yaşar Koca tarafından kaleme alındı.</span>
+        <h1 class="group-hover:text-orange-500">
+          {{ articles[1].title }}
+        </h1>
+        <p>{{ articles[1].description }}</p>
+      </div>
+      <div class="card-zoom md:w-2/5" style="height: 240px">
+        <div
+          class="card-zoom-image"
+          [style.background-image]="
+            'url(\'/assets/' + articles[1].image + '.jpg\')'
+          "></div>
+      </div>
+    </section>
+  </div>
 
   <section
-    [routerLink]="['/article/', articles[1].slug]"
-    class="container mx-auto md:w-4/5 xl:w-3/5 flex flex-col-reverse md:flex-row justify-between xl:border p-4 my-12 group cursor-pointer">
-    <div class="flex-1 flex flex-col justify-center p-12">
-      <span class="text-gray-400">Yaşar Koca tarafından kaleme alındı.</span>
-      <h1 class="group-hover:text-orange-800">{{ articles[1].title }}</h1>
-      <p>{{ articles[1].description }}</p>
-    </div>
-    <div class="card-zoom md:w-2/5" style="height: 240px">
-      <div class="card-zoom-image bg-laptop"></div>
-    </div>
-  </section>
-
-  <section
-    class="flex flex-col items-center py-12 p-4 xl:p-20 text-center"
-    style="background-color: rgb(248, 236, 198); min-height: 280px">
-    <p class="xl:w-3/5 text-base md:text-3xl font-serif">
+    class="flex flex-col items-center py-12 p-4 xl:p-20 text-center bg-lightyellow">
+    <p class="xl:w-3/5 text-base md:text-3xl !font-serif">
       "Bana sor sevgili kâri', sana ben söyleyeyim, <br />
       Ne hüviyette şu karşında duran eş'ârım: <br />
       Bir yığın söz ki samîmiyyeti ancak hüneri; <br />
@@ -43,28 +55,32 @@
       Oku, şâyet sana bir hisli yürek lâzımsa; <br />
       Oku, zîrâ onu yazdım, iki söz yazdımsa." <br />
     </p>
-    <p class="xl:w-2/5 text-sm font-black capitalize md:text-2xl font-serif">
+    <p class="xl:w-2/5 text-sm font-black capitalize md:text-2xl !font-serif">
       Mehmet Akif Ersoy, Vatan Şairi
     </p>
   </section>
 
-  <div style="background-color: rgb(246 246 244)">
-    <section class="container mx-auto p-12">
-      <h4>YAZARIN TÜM YAZILARI</h4>
-      <section class="flex gap-6 overflow-x-scroll">
-        <div *ngFor="let article of articles; index as i">
+  <div class="bg-graycolor p-24">
+    <section class="container mx-auto">
+      <h4 class="!text-3xl">YAZARIN TÜM YAZILARI</h4>
+      <hr />
+      <br />
+      <section class="flex justify-between gap-2 overflow-x-scroll">
+        <div
+          [routerLink]="['/articles/', article.slug]"
+          *ngFor="let article of articles; index as i"
+          class="flex flex-col cursor-pointer"
+          style="width: 350px; height: 300px">
           <div
-            class="bg-flower bg-left"
-            style="height: 180px; width: 300px"></div>
-          <div class="p-6">
-            <h1>{{ article.title }}</h1>
-            <p>{{ article.description }}</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor
-              labore ab dolore quos exercitationem perspiciatis vitae
-              consectetur aliquam officiis optio deserunt eius dolores incidunt
-              ex similique maiores, adipisci placeat obcaecati odio suscipit
-              qui! Quam maxime sequi facere mollitia nam assumenda.
+            class="basis-2/3 bg-cover bg-left"
+            [style.background-image]="
+              'url(\'/assets/' + article.image + '.jpg\')'
+            "
+            style="max-height: 200px"></div>
+          <div class="basis-1/3 p-6">
+            <h1 class="!text-2xl">{{ article.title }}</h1>
+            <p class="!text-base !font-ubuntu">
+              {{ article.description }}
             </p>
           </div>
         </div>

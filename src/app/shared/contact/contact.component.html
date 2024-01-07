@@ -1,31 +1,22 @@
-<div
-  class="authentication-card-container"
-  fxLayout="column"
-  fxLayoutAlign="center">
-  <mat-card class="authentication-card">
-    <mat-card-header> <mat-card-title>Login</mat-card-title></mat-card-header>
-    <mat-card-content>
-      <form
-        [formGroup]="loginForm"
-        fxLayout="column"
-        fxLayoutAlign="center stretch">
-        <mat-form-field>
-          <mat-label>Username</mat-label>
-          <input matInput formControlName="username" />
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Password</mat-label>
-          <input matInput type="password" formControlName="password" />
-        </mat-form-field>
-      </form>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="onSubmit()">
-        Login
-      </button>
-      <button mat-button routerLink="/register" routerLinkActive="active">
-        Don't have an account? Register here.
-      </button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+<section class="h-screen p-6 py-12 xl:p-36">
+  <div
+    class="h-full container mx-auto flex flex-col items-center justify-center">
+    <h1 class="text-center !text-4xl !mb-12">
+      Benimle iletişime geçmek ister misin?
+    </h1>
+    <div class="flex flex-col xl:flex-row items-center">
+      <div
+        class="bg-profile bg-cover bg-center rounded-full"
+        style="width: 150px; height: 150px"></div>
+      <div class="flex flex-col items-center xl:items-left justify-center p-6">
+        <h3 class="xl:!text-3xl !mb-0 !font-yanone">Yaşar Koca</h3>
+        <p class="!mb-4 text-base xl:text-lg font-yanone">
+          Edebiyat Öğretmeni | Yazar
+        </p>
+        <a href="mailto:yykoca.08@gmail.com">
+          <button class="font-test" mat-raised-button>Mail Gönder</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

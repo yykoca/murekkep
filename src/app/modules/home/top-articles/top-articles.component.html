@@ -1,20 +1,26 @@
 <section
   *ngIf="topArticles as articles"
-  class="container mx-auto flex flex-col xl:p-12">
-  <h2 class="ps-4">Yazarın seçtikleri</h2>
-
+  class="container mx-auto flex flex-col xl:px-6 my-12">
+  <h2 class="ps-4 !text-3xl !tracking-widest">YAZARIN SEÇTİKLERİ</h2>
+  <hr />
   <article
     *ngFor="let article of articles; index as i"
-    class="grid md:grid-cols-2 gap-6 items-center mb-12">
+    class="fadeIn-animation grid md:grid-cols-2 gap-12 items-center md:px-24 my-12 group">
     <div
-      class="p-4 xl:p-12 order-last"
+      [routerLink]="['/articles/', article.slug]"
+      class="flex flex-col justify-center p-4 xl:p-12 order-last h-full cursor-pointer"
       [ngClass]="i % 2 === 0 ? 'md:order-first' : 'md:order-last'">
-      <span>{{ article.slug }}</span>
-      <h1>{{ article.title }}</h1>
-      <p>{{ article.description }}</p>
+      <span class="font-serif text-sm text-gray-400">
+        {{ article.createdAt | date: 'd MMM y' }} tarihinde yayınlandı.
+      </span>
+      <h1 class="!text-4xl group-hover:text-orange-500">
+        {{ article.title }}
+      </h1>
+      <p class="text-lg">{{ article.description }}</p>
     </div>
     <div
-      class="bg-center bg-cover bg-no-repeat bg-blend-lighten bg-desk"
+      class="bg-center bg-cover bg-no-repeat bg-blend-lighten"
+      [style.background-image]="'url(\'/assets/' + article.image + '.jpg\')'"
       style="height: 340px"></div>
   </article>
 </section>
