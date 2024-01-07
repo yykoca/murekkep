@@ -143,3 +143,39 @@ body {
   }
 }
 
+@keyframes fadeInRightView {
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fadeInRightOnView {
+    opacity: 0;
+    transform: translateX(-20%);
+    animation: fadeInRightView linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    animation-duration: 15s;
+  }
+}
+
+@keyframes fadeInUpView {
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fadeInUpOnView {
+    opacity: 0;
+    transform: translateY(40%);
+    animation: fadeInUpView linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    animation-duration: 15s;
+  }
+}
+
