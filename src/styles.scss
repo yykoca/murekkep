@@ -111,6 +111,21 @@ body {
   animation: 1.5s fadeInDown;
 }
 
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.fadeInRight-animation {
+  animation: 2s fadeInRight;
+}
+
 
 @keyframes fadeIn {
   to {
