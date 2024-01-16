@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
           header.classList.remove('not-landing-page');
         }
       }
+      window.scrollTo(0, 0);
     });
 
     window.addEventListener('scroll', function () {

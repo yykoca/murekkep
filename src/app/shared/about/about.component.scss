@@ -1,0 +1,9 @@
+i.fa-solid,
+i.fab,
+i.fa-brands {
+  &:hover {
+    cursor: pointer;
+    color: #f97316;
+    transform: scale(1.2)
+  }
+}

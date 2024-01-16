@@ -9,7 +9,7 @@ const routes: Routes = [
     component: ArticleComponent,
   },
   {
-    path: 'articles/:slug',
+    path: 'tum-yazilar/:slug',
     component: ArticleDetailComponent,
   },
 ];
