@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PageNotFoundComponent } from '@app/core/page-not-found/page-not-found.component';
 import { AboutComponent } from '@app/shared/about/about.component';
 
 const routes: Routes = [
@@ -19,6 +20,8 @@ const routes: Routes = [
       import('./modules/article/article.module').then(m => m.ArticleModule),
   },
   { path: 'hakkimda', component: AboutComponent },
+  { path: '404', component: PageNotFoundComponent },
+  { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 
 @NgModule({
