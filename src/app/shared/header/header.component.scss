@@ -2,6 +2,9 @@ header {
   position: fixed;
   top: 0;
   z-index: 99;
+  background-color: transparent;
+  transition: all;
+  transition-duration: 500ms;
 
   .nav {
     transition: all;
@@ -60,4 +63,11 @@ header {
     }
 
   }
+}
+
+.active-link {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-color: #F97316;
+  text-decoration-thickness: 3px;
 }
