@@ -4,8 +4,8 @@
     <div class="md:p-24">
       <a [routerLink]="['/']" class="text-sm text-orange-500">
         <i class="fa-solid fa-chevron-left mx-2"></i>
-        <span class="font-black whitespace-nowrap hover:underline">
-          Ana sayfaya dön
+        <span class="font-black whitespace-nowrap hover:underline"
+          >Ana sayfaya dön
         </span>
       </a>
       <h1
@@ -37,7 +37,7 @@
       <div
         class="bg-left bg-cover bg-no-repeat bg-blend-lighten"
         [style.background-image]="'url(\'/assets/' + article.image + '.jpg\')'"
-        style="height: 240px"></div>
+        style="height: 300px"></div>
       <div class="content" [innerHTML]="article.content"></div>
       <!-- <p
         *ngFor="let paragraph of article.paragraphs"
