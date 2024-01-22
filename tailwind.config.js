@@ -29,8 +29,9 @@ module.exports = {
       current: 'currentColor',
       'white': '#ffffff',
       'lightyellow': '#f8ecc6',
-      'graycolor': '#f6f6f4',
-      'darkblue': '#1f1b16'
+      'lightgray': '#f6f6f4',
+      'darkgray': '#f0f0f0',
+      'darkblue': '#1f1b16',
     },
   },
   plugins: [

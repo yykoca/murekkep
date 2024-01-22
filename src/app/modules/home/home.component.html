@@ -1,4 +1,4 @@
-<ng-container *ngIf="articles$ | async as articles; else noContent">
+<ng-container *ngIf="articles$ | async as articles">
   <app-featured-article [article]="articles[0]"></app-featured-article>
   <app-top-articles [topArticles]="articles"></app-top-articles>
 
@@ -42,12 +42,12 @@
   </div>
 
   <section
-    class="flex flex-col justify-center gap-4 py-12 p-4 xl:p-20 bg-graycolornew">
+    class="flex flex-col justify-center gap-4 py-12 p-4 xl:p-20 bg-darkgray">
     <div class="container mx-auto">
       <hr class="w-12 h-1 my-2 bg-orange-500 border-0 rounded" />
       <h2 class="!text-xl md:!text-2xl xl:!text-3xl">SEÇME ŞİİRLER</h2>
     </div>
-    <div class="flex mx-auto">
+    <div class="relative flex mx-auto p-12 md:p-24">
       <figure class="max-w-screen-md text-center self-center">
         <blockquote>
           <p
@@ -76,7 +76,7 @@
         </figcaption>
       </figure>
       <svg
-        class="w-10 h-10 md:w-32 md:h-32 mb-3 mx-8 text-white md:self-start"
+        class="absolute top-0 right-0 w-16 h-16 md:w-32 md:h-32 mb-3 text-white"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
@@ -87,7 +87,7 @@
     </div>
   </section>
 
-  <div class="bg-graycolor p-6 md:p-24">
+  <div class="p-6 md:p-24">
     <section class="container mx-auto">
       <h4 class="!text-3xl">YAZARIN TÜM YAZILARI</h4>
       <hr />
@@ -118,24 +118,3 @@
 
   <app-email-subscription></app-email-subscription>
 </ng-container>
-
-<ng-template #noContent>
-  <section
-    class="flex flex-col justify-center items-end h-screen bg-desk bg-right bg-cover bg-no-repeat bg-fixed bg-blend-color-burn">
-    <div
-      class="fadeInUp-animation container text-white p-4 md:p-24 lg:w-3/5 hover:cursor-pointer group transition-all duration-300 ease-in-out">
-      <span
-        class="highlight-article tracking-widest !text-base md:!text-lg xl:!text-xl">
-        Yazar tarafından öne çıkarılan yazı.
-      </span>
-      <h1 class="!text-4xl md:!text-5xl xl:!text-6xl hover:text-orange-500">
-        Dolores saepe fugiat explicabo cupiditate, possimus iusto soluta?
-      </h1>
-      <p class="!text-lg md:!text-xl xl:!text-2xl">
-        Eveniet facilis commodi magni officia reiciendis nostrum laudantium, sit
-        nesciunt ea doloribus eaque, maxime exercitationem quisquam eum harum
-        dignissimos!
-      </p>
-    </div>
-  </section>
-</ng-template>
