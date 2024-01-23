@@ -53,12 +53,12 @@
   box-sizing: border-box;
 }
 
-// html,
-// body {
-//   height: 100%;
-// }
+html,
 body {
   scroll-behavior: smooth;
+}
+
+body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 
@@ -78,6 +78,11 @@ body {
     font-family: 'ui-serif', 'Georgia';
   }
 }
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 
 
 @keyframes fadeInUp {

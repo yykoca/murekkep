@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ export class AppComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    const header = document.getElementsByClassName('header')[0];
+    initFlowbite();
+    const header = document.getElementsByTagName('header')[0];
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         if (event.url !== '/') {
