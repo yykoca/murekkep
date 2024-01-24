@@ -6,15 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  isOpen = false;
+  isCollapsed = false;
   body!: HTMLElement;
 
   ngOnInit() {
     this.body = document.getElementsByTagName('body')[0];
   }
 
-  onToggle() {
-    this.isOpen = !this.isOpen;
+  toggleMenu() {
+    this.isCollapsed = !this.isCollapsed;
     this.body.classList.toggle('overflow-hidden');
+  }
+
+  hideMenu() {
+    this.isCollapsed = !this.isCollapsed;
+    this.body.classList.remove('overflow-hidden');
   }
 }
