@@ -1,0 +1,18 @@
+@media only screen and (max-width: 640px) {
+  section {
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    -o-background-size: auto;
+    background-size: auto;
+
+    -webkit-background-position: right top;
+    -moz-background-position: right top;
+    -o-background-position: right top;
+    background-position: right top;
+
+    -webkit-background-attachment: fixed;
+    -moz-background-attachment: fixed;
+    -o-background-attachment: fixed;
+    background-attachment: fixed;
+  }
+}
