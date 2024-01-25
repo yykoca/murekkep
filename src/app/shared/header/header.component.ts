@@ -19,7 +19,9 @@ export class HeaderComponent implements OnInit {
   }
 
   hideMenu() {
-    this.isCollapsed = !this.isCollapsed;
+    if (this.isCollapsed) {
+      this.isCollapsed = false;
+    }
     this.body.classList.remove('overflow-hidden');
   }
 }
