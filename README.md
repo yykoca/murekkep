@@ -1,4 +1,6 @@
-# YkocaBlog
+# Mürekkep | A Personal Blog
+
+![blog](https://github.com/yykoca/ykoca-blog/assets/61105054/fd738c9f-8777-4962-967c-8fe043c618c7)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
 
