@@ -31,7 +31,7 @@
           aria-label="calendar"
           fontIcon="calendar_month"></mat-icon>
         <span class="text-xs">
-          {{ article.createdAt | date: 'd MMM y' }}
+          {{ article.createdAt | date: 'MMM y' | translateDate }}
         </span>
       </div>
       <div

@@ -11,7 +11,8 @@
       class="flex flex-col justify-center p-4 xl:p-12 order-last h-full cursor-pointer"
       [ngClass]="i % 2 === 0 ? 'md:order-first' : 'md:order-last'">
       <span class="font-serif text-sm text-gray-400">
-        {{ article.createdAt | date: 'd MMM y' }} tarihinde yayınlandı.
+        {{ article.createdAt | date: 'MMM y' | translateDate }} tarihinde
+        yayınlandı.
       </span>
       <h1 class="!text-4xl group-hover:text-orange-500">
         {{ article.title }}
