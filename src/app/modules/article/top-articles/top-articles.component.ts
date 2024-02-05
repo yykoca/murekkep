@@ -11,7 +11,7 @@ export class TopArticlesComponent implements OnInit {
 
   ngOnInit() {
     this.topArticles = this.topArticles.filter(article =>
-      article.title.includes('Festival')
+      article.title.includes('ın')
     );
   }
 }
