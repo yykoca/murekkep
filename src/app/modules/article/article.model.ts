@@ -8,6 +8,7 @@ export type Article = {
   paragraphs: Paragraph[];
   createdAt: Date;
   readingTime: number;
+  authoredAt?: Date;
 };
 
 type Paragraph = {

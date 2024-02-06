@@ -18,20 +18,30 @@
       </p>
       <div class="flex align-center py-4">
         <mat-icon
-          class="ms-2 text-xs text-center"
+          class="ms-2 text-xs text-center text-gray-600"
+          aria-hidden="false"
+          aria-label="person"
+          fontIcon="person"></mat-icon>
+        <span class="text-xs text-gray-500">
+          {{ article.author.name }}
+        </span>
+        <ng-container *ngIf="article.authoredAt">
+          <mat-icon
+            class="ms-2 text-xs text-center text-gray-600"
+            aria-hidden="false"
+            aria-label="calendar"
+            fontIcon="calendar_month"></mat-icon>
+          <span class="text-xs text-gray-500">
+            {{ article.authoredAt | date: 'MMM y' | translateDate }}
+          </span>
+        </ng-container>
+        <mat-icon
+          class="ms-2 text-xs text-center text-gray-600"
           aria-hidden="false"
           aria-label="schedule"
           fontIcon="schedule"></mat-icon>
         <span class="text-xs text-gray-500">
           {{ article.readingTime | number: '1.0-0' }} dk okuma
-        </span>
-        <mat-icon
-          class="ms-6 text-xs text-center"
-          aria-hidden="false"
-          aria-label="calendar"
-          fontIcon="calendar_month"></mat-icon>
-        <span class="text-xs">
-          {{ article.createdAt | date: 'MMM y' | translateDate }}
         </span>
       </div>
       <div
