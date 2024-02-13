@@ -8,10 +8,15 @@ export type Article = {
   paragraphs: Paragraph[];
   createdAt: Date;
   readingTime: number;
+  author: Author;
   authoredAt?: Date;
 };
 
 type Paragraph = {
   id: string;
   content: string;
+};
+
+type Author = {
+  name: string;
 };

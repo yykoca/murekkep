@@ -22,7 +22,9 @@
           aria-hidden="false"
           aria-label="person"
           fontIcon="person"></mat-icon>
-        <span class="text-xs text-gray-500">Yaşar Koca</span>
+        <span class="text-xs text-gray-500">
+          {{ article.author.name }}
+        </span>
         <ng-container *ngIf="article.authoredAt">
           <mat-icon
             class="ms-2 text-xs text-center text-gray-600"

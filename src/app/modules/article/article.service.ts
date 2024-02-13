@@ -1,3 +1,4 @@
+import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiService } from '@app/core/services/api.service';
 import { Article } from '@app/modules/article/article.model';
@@ -11,9 +12,9 @@ export class ArticleService {
 
   constructor(private apiService: ApiService) {}
 
-  getArticles(): Observable<Article[]> {
+  getArticles(params?: HttpParams): Observable<Article[]> {
     return this.apiService
-      .get<Article[]>(this.url)
+      .get<Article[]>(this.url, params)
       .pipe(map((res: any) => res['hydra:member']));
   }
 
