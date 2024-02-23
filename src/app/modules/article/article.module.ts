@@ -7,6 +7,7 @@ import { ArticleComponent } from './article.component';
 import { TranslateDatePipe } from '@app/core/pipes/translate-date.pipe';
 import { TopArticlesComponent } from '@app/modules/article/top-articles/top-articles.component';
 import { FeaturedArticleComponent } from '@app/modules/article/featured-article/featured-article.component';
+import { SelectedArticlesComponent } from '@app/modules/article/selected-articles/selected-articles.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FeaturedArticleComponent } from '@app/modules/article/featured-article/
     ArticleComponent,
     TopArticlesComponent,
     FeaturedArticleComponent,
+    SelectedArticlesComponent,
   ],
   exports: [ArticleComponent, TopArticlesComponent, FeaturedArticleComponent],
   imports: [
