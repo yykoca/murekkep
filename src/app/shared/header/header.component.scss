@@ -53,9 +53,11 @@ header {
   &.block {
     a, span {
       color: rgb(37 28 20);
+    }
 
+    a:not(.active-link) {
       &:hover {
-        color: rgb(249 115 22);;
+        color: rgb(249 115 22);
       }
     }
 
