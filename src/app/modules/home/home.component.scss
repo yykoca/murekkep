@@ -10,6 +10,7 @@ section:hover .card-zoom .card-zoom-image {
 
 .article-container {
   width: 350px;
+  min-height: 450px;
   position: relative;
   top: 20px;
   transition: all;
@@ -24,6 +25,12 @@ section:hover .card-zoom .card-zoom-image {
   }
 
   .article-image {
-    width: 350px;
+    max-width: 350px;
   }
+}
+
+button {
+  height: 80px;
+  line-height: 2rem;
+  font-size: 1rem;
 }

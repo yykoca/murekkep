@@ -87,16 +87,24 @@
     </div>
   </section>
 
-  <div class="p-6 md:p-24">
+  <div
+    class="p-2 md:p-6 lg:p-24"
+    *ngIf="displayedArticles | async as articles2">
     <section class="container mx-auto">
-      <h4 class="!text-3xl">YAZARIN TÜM YAZILARI</h4>
+      <h4 class="!text-3xl">TÜM YAZILAR</h4>
       <hr />
       <br />
       <section
-        class="flex justify-between gap-6 overflow-x-scroll overflow-y-hidden">
+        class="flex items-center justify-center px-4 md:px-12 lg:px-16 gap-6">
+        <button
+          class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-300"
+          (click)="changeArticle(-1)"
+          [disabled]="index.value === 0">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
         <div
           [routerLink]="['/tum-yazilar/', article.slug]"
-          *ngFor="let article of articles; index as i"
+          *ngFor="let article of articles2; index as i"
           class="article-container flex flex-col cursor-pointer group mb-8">
           <div
             class="article-image bg-cover bg-left"
@@ -112,6 +120,12 @@
             </p>
           </div>
         </div>
+        <button
+          class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-300"
+          (click)="changeArticle(1)"
+          [disabled]="articles.length - articlePerPage.value === index.value">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
       </section>
     </section>
   </div>
