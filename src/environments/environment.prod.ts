@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://api.yasarkoca.xyz/api',
-  authorId: '018d9a84-7587-705e-92c1-1ae5242713b3',
+  apiUrl: 'https://yasarkoca.xyz/api',
+  authorId: '018e943f-4da5-7c45-8806-6c77361a4178',
 };
