@@ -1,3 +1,72 @@
-<mat-toolbar>
-    <span>Blog Page</span>
-</mat-toolbar>
+<header
+  class="w-full font-bree fixed top-0 z-50"
+  [ngClass]="{ block: isCollapsed }">
+  <nav
+    class="fadeInDown-animation container mx-auto max-w-screen-xl lg:flex lg:justify-between px-4">
+    <div class="placeholder flex items-center justify-between">
+      <a [routerLink]="['/']" class="flex items-center">
+        <img
+          src="/assets/logo-white.png"
+          class="logo mr-3 h-6 sm:h-9"
+          alt="logo" />
+        <span
+          class="self-center font-black tracking-wider whitespace-nowrap text-3xl text-white"
+          >Mürekkep</span
+        >
+      </a>
+      <button
+        class="flex lg:hidden flex-col justify-between"
+        type="button"
+        (click)="toggleMenu()">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </button>
+    </div>
+    <div
+      class="lg:flex lg:w-auto justify-between items-center w-full order-2"
+      [ngClass]="{ hidden: !isCollapsed }">
+      <ul
+        class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+        <li>
+          <a
+            [routerLink]="['/']"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="hideMenu()"
+            class="block lg:hidden py-2 pr-4 pl-3 text-white rounded bg-primary-700 text-base hover:text-orange-500 tracking-widest border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
+            aria-current="page">
+            Ana Sayfa
+          </a>
+        </li>
+        <li>
+          <a
+            [routerLink]="['/tum-yazilar']"
+            routerLinkActive="active-link"
+            (click)="hideMenu()"
+            class="block py-2 pr-4 pl-3 text-white text-base hover:text-orange-500 tracking-widest border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
+            >Tüm Yazılar</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['/secme-siirler']"
+            routerLinkActive="active-link"
+            (click)="hideMenu()"
+            class="block py-2 pr-4 pl-3 text-white text-base hover:text-orange-500 tracking-widest border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
+            >Seçme Şiirler</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['/hakkimda']"
+            routerLinkActive="active-link"
+            (click)="hideMenu()"
+            class="block py-2 pr-4 pl-3 text-white text-base hover:text-orange-500 tracking-widest lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"
+            >Hakkımda</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

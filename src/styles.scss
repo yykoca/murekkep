@@ -1,4 +1,187 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~@fortawesome/fontawesome-free/css/all.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+  font-family: 'Amita';
+  src: url('assets/fonts/Amita/Amita-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bree serif';
+  src: url('assets/fonts/Bree_Serif/BreeSerif-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Kings';
+  src: url('assets/fonts/Kings/Kings-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lobster Two';
+  src: url('assets/fonts/Lobster_Two/LobsterTwo-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('assets/fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Yanone';
+  src: url('assets/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+
+  h1, h3 {
+    font-family: 'Bree serif' !important;
+  }
+
+  h2 {
+    font-family: 'Yanone' !important;
+  }
+
+  h4, p, button {
+    font-family: 'Exo 2' !important;
+  }
+
+  span.highlight-article {
+    font-family: 'ui-serif', 'Georgia';
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.fadeInUp-animation {
+  animation: 2s fadeInUp;
+}
+
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.fadeInDown-animation {
+  animation: 1.5s fadeInDown;
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(-20%);
+
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.fadeInRight-animation {
+  opacity: 0;
+  animation: 2s fadeInRight forwards;
+}
+
+
+@keyframes fadeIn {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fadeIn-animation {
+    scale: .8; opacity: 0;
+    animation: fadeIn linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+  }
+}
+
+@keyframes fadeInRightView {
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fadeInRightOnView {
+    opacity: 0;
+    transform: translateX(-20%);
+    animation: fadeInRightView linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    animation-duration: 15s;
+  }
+}
+
+@keyframes fadeInUpView {
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fadeInUpOnView {
+    opacity: 0;
+    transform: translateY(40%);
+    animation: fadeInUpView linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    animation-duration: 15s;
+  }
+}
+

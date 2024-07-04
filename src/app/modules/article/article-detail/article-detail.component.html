@@ -1,0 +1,68 @@
+<ng-container *ngIf="article$ | async as article">
+  <article
+    class="container mx-auto flex flex-col justify-center mt-24 md:mt-16 xl:px-36 leading-relaxed">
+    <div class="pt-4 md:p-24">
+      <a [routerLink]="['/']" class="text-sm text-orange-500">
+        <i class="fa-solid fa-chevron-left mx-2"></i>
+        <span class="font-black whitespace-nowrap hover:underline"
+          >Ana sayfaya dön
+        </span>
+      </a>
+      <h1
+        class="!leading-normal !font-ubuntu md:!text-4xl lg:!text-5xl p-4 !pb-0 !mb-0">
+        {{ article.title }}
+      </h1>
+      <p
+        class="md:!text-xl lg:!text-2xl text-gray-600 p-4 !py-0 !mb-0 font-yanone">
+        {{ article.description }}
+      </p>
+      <div class="flex align-center py-4">
+        <mat-icon
+          class="ms-2 text-xs text-center text-gray-600"
+          aria-hidden="false"
+          aria-label="person"
+          fontIcon="person"></mat-icon>
+        <span class="text-xs text-gray-500">
+          {{ article.author.name }}
+        </span>
+        <ng-container *ngIf="article.authoredAt">
+          <mat-icon
+            class="ms-2 text-xs text-center text-gray-600"
+            aria-hidden="false"
+            aria-label="calendar"
+            fontIcon="calendar_month"></mat-icon>
+          <span class="text-xs text-gray-500">
+            {{ article.authoredAt | date: 'MMM y' | translateDate }}
+          </span>
+        </ng-container>
+        <mat-icon
+          class="ms-2 text-xs text-center text-gray-600"
+          aria-hidden="false"
+          aria-label="schedule"
+          fontIcon="schedule"></mat-icon>
+        <span class="text-xs text-gray-500">
+          {{ article.readingTime | number: '1.0-0' }} dk okuma
+        </span>
+      </div>
+      <div
+        class="bg-left bg-cover bg-no-repeat bg-blend-lighten"
+        [style.background-image]="'url(\'/assets/' + article.image + '.jpg\')'"
+        style="height: 300px"></div>
+      <div class="content" [innerHTML]="article.content"></div>
+      <!-- <p
+        *ngFor="let paragraph of article.paragraphs"
+        class="!mt-6 indent-8 p-4 text-justify text-base lg:text-xl font-sans">
+        {{ paragraph.content }}
+      </p> -->
+    </div>
+  </article>
+  <section class="bg-gray-100 p-24">
+    <div class="container mx-auto flex flex-col items-center justify-around">
+      <div
+        class="bg-profile bg-cover bg-center rounded-full mb-4"
+        style="width: 80px; height: 80px"></div>
+      <h3 class="!text-xl">Yaşar Koca</h3>
+      <p class="!font-ubuntu text-base">Eğitimci | Yazar</p>
+    </div>
+  </section>
+</ng-container>

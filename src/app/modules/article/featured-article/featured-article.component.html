@@ -1,0 +1,17 @@
+<section
+  class="flex flex-col justify-center items-end h-screen bg-desk sm:bg-right md:bg-cover bg-no-repeat sm:bg-fixed sm:bg-blend-color-burn">
+  <div
+    [routerLink]="['/tum-yazilar/', article.slug]"
+    class="fadeInUp-animation container text-white p-4 md:p-24 lg:w-3/5 hover:cursor-pointer group transition-all duration-300 ease-in-out">
+    <span
+      class="highlight-article tracking-widest !text-base md:!text-lg xl:!text-xl">
+      Yazar tarafından öne çıkarılan yazı.
+    </span>
+    <h1 class="!text-4xl md:!text-5xl xl:!text-6xl hover:text-orange-500">
+      {{ article.title }}
+    </h1>
+    <p class="!text-lg md:!text-xl xl:!text-2xl">
+      {{ article.description }}
+    </p>
+  </div>
+</section>

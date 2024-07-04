@@ -1,0 +1,134 @@
+<ng-container *ngIf="articles$ | async as articles">
+  <app-featured-article [article]="articles[0]"></app-featured-article>
+  <app-top-articles [topArticles]="articles"></app-top-articles>
+
+  <div class="md:px-36">
+    <!-- <section
+      [routerLink]="['/tum-yazilar/', articles[2].slug]"
+      class="bg-white container mx-auto md:w-4/5 xl:w-3/5 flex flex-col-reverse md:flex-row justify-between xl:border border-darkblue hover:border-orange-500 my-12 group cursor-pointer">
+      <div class="flex-1 flex flex-col justify-center p-12">
+        <h1 class="group-hover:text-orange-500">
+          {{ articles[2].title }}
+        </h1>
+        <p>{{ articles[2].description }}</p>
+      </div>
+      <div class="card-zoom md:w-2/5" style="height: 240px">
+        <div
+          class="card-zoom-image"
+          [style.background-image]="
+            'url(\'/assets/' + articles[2].image + '.jpg\')'
+          "></div>
+      </div>
+    </section> -->
+
+    <!-- <section
+      [routerLink]="['/tum-yazilar/', articles[1].slug]"
+      class="bg-white container mx-auto md:w-4/5 xl:w-3/5 flex flex-col-reverse md:flex-row justify-between xl:border border-darkblue hover:border-orange-500 my-12 group cursor-pointer">
+      <div class="flex-1 flex flex-col justify-center p-12">
+        <span class="text-gray-400">Yaşar Koca tarafından kaleme alındı.</span>
+        <h1 class="group-hover:text-orange-500">
+          {{ articles[1].title }}
+        </h1>
+        <p>{{ articles[1].description }}</p>
+      </div>
+      <div class="card-zoom md:w-2/5" style="height: 240px">
+        <div
+          class="card-zoom-image"
+          [style.background-image]="
+            'url(\'/assets/' + articles[1].image + '.jpg\')'
+          "></div>
+      </div>
+    </section> -->
+  </div>
+
+  <section
+    class="flex flex-col justify-center gap-4 py-12 p-4 xl:p-20 bg-darkgray">
+    <div class="container mx-auto">
+      <hr class="w-12 h-1 my-2 bg-orange-500 border-0 rounded" />
+      <h2 class="!text-xl md:!text-2xl xl:!text-3xl">SEÇME ŞİİRLER</h2>
+    </div>
+    <div class="relative flex mx-auto px-4 py-12 md:p-24">
+      <figure class="max-w-screen-md text-center self-center">
+        <blockquote>
+          <p
+            class="text-sm md:text-2xl italic font-medium text-gray-900 pt-6 md:pt-12">
+            Bana sor sevgili kâri', sana ben söyleyeyim, <br />
+            Ne hüviyette şu karşında duran eş'ârım: <br />
+            Bir yığın söz ki samîmiyyeti ancak hüneri; <br />
+            Ne tasannu bilirim, çünkü, ne sanatkârım. <br />
+            Şi'r için “gözyaşı” derler; onu bilmem, yalnız, <br />
+            Aczimin giryesidir bence bütün âsârım! <br />
+            Ağlarım, ağlâtmam; hissederim, söyleyemem; <br />
+            Dili yok kalbimin, ondan ne kadar bîzârım! <br />
+            Oku, şâyet sana bir hisli yürek lâzımsa; <br />
+            Oku, zîrâ onu yazdım, iki söz yazdımsa. <br />
+          </p>
+        </blockquote>
+        <figcaption
+          class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
+          <div
+            class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
+            <cite class="pe-3 font-medium text-gray-900"
+              >Mehmet Akif Ersoy</cite
+            >
+            <cite class="ps-3 text-sm text-gray-900">Vatan Şairi</cite>
+          </div>
+        </figcaption>
+      </figure>
+      <svg
+        class="absolute top-0 right-0 w-16 h-16 md:w-32 md:h-32 mb-3 text-white"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 18 14">
+        <path
+          d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
+      </svg>
+    </div>
+  </section>
+
+  <div
+    class="p-2 md:p-6 lg:p-24"
+    *ngIf="displayedArticles | async as articles2">
+    <section class="container mx-auto">
+      <h4 class="!text-3xl">TÜM YAZILAR</h4>
+      <hr />
+      <br />
+      <section
+        class="flex items-center justify-center px-4 md:px-12 lg:px-16 gap-6">
+        <button
+          class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-300"
+          (click)="changeArticle(-1)"
+          [disabled]="index.value === 0">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div
+          [routerLink]="['/tum-yazilar/', article.slug]"
+          *ngFor="let article of articles2; index as i"
+          class="article-container flex flex-col cursor-pointer group mb-8">
+          <div
+            class="article-image bg-cover bg-left"
+            [style.background-image]="
+              'url(\'/assets/' + article.image + '.jpg\')'
+            "></div>
+          <div class="p-6">
+            <h1 class="!text-2xl group-hover:underline">
+              {{ article.title }}
+            </h1>
+            <p class="!text-base !font-ubuntu">
+              {{ article.description }}
+            </p>
+          </div>
+        </div>
+        <button
+          class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-300"
+          (click)="changeArticle(1)"
+          [disabled]="articles.length - articlePerPage.value === index.value">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </section>
+    </section>
+  </div>
+
+  <app-email-subscription></app-email-subscription>
+</ng-container>

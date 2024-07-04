@@ -1,0 +1,36 @@
+.card-zoom {
+  @apply relative flex items-center justify-center overflow-hidden shadow-xl;
+}
+.card-zoom-image {
+  @apply absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover;
+}
+section:hover .card-zoom .card-zoom-image {
+  @apply scale-110;
+}
+
+.article-container {
+  width: 350px;
+  min-height: 450px;
+  position: relative;
+  top: 20px;
+  transition: all;
+  transition-duration: 700ms;
+
+  &:hover {
+    top: 0px;
+  }
+
+  & > div.article-image {
+    height: 200px;
+  }
+
+  .article-image {
+    max-width: 350px;
+  }
+}
+
+button {
+  height: 80px;
+  line-height: 2rem;
+  font-size: 1rem;
+}

@@ -1,18 +1,50 @@
 import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { HeaderComponent } from './header/header.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { EmailSubscriptionComponent } from './email-subscription/email-subscription.component';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from '@app/shared/header/header.component';
+import { FooterComponent } from '@app/shared/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
+import { LoadingComponent } from './loading/loading.component';
+
+const materialModules = [
+  MatToolbarModule,
+  MatIconModule,
+  MatButtonModule,
+  MatInputModule,
+  MatCardModule,
+];
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    EmailSubscriptionComponent,
+    FooterComponent,
+    HeaderComponent,
+    AboutComponent,
+    LoadingComponent,
   ],
   imports: [
     CommonModule,
-    MatToolbarModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ...materialModules,
   ],
   exports: [
-    HeaderComponent
-  ]
+    EmailSubscriptionComponent,
+    FooterComponent,
+    HeaderComponent,
+    RouterModule,
+    LoadingComponent,
+    ...materialModules,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}
