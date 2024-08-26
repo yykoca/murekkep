@@ -1,14 +1,21 @@
+section {
+    -webkit-background-position: center;
+    -moz-background-position: center;
+    -o-background-position: center;
+    background-position: center;
+}
+
 @media only screen and (max-width: 640px) {
   section {
-    -webkit-background-size: auto;
-    -moz-background-size: auto;
-    -o-background-size: auto;
-    background-size: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
-    -webkit-background-position: right top;
-    -moz-background-position: right top;
-    -o-background-position: right top;
-    background-position: right top;
+    -webkit-background-position: left;
+    -moz-background-position: left;
+    -o-background-position: left;
+    background-position: left;
 
     -webkit-background-attachment: fixed;
     -moz-background-attachment: fixed;
