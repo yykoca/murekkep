@@ -10,7 +10,7 @@
     A personal blog
     <br />
     <br />
-    <a href="https://yasarkoca.netlify.app">View Page</a>
+    <a href="https://yasarkoca.netlify.app" target="_blank">View Page</a>
   </p>
 </div>
 
