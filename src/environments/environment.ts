@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://localhost:8000/api',
-  authorId: '018da34b-a094-758b-8236-a3f2981fa2db',
+  apiUrl: 'https://api.yasarkoca.com/api',
+  authorId: '019ca14d-eb57-7dab-8a4d-bfb510bcb8c9',
 };
 
 /*
