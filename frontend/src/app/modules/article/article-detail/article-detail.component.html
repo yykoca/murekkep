@@ -1,4 +1,4 @@
-<ng-container *ngIf="article$ | async as article">
+@if (article$ | async; as article) {
   <article
     class="container mx-auto flex flex-col justify-center mt-24 md:mt-16 xl:px-36 leading-relaxed">
     <div class="pt-4 md:p-24">
@@ -21,25 +21,25 @@
           class="ms-2 text-xs text-center text-gray-600"
           aria-hidden="false"
           aria-label="person"
-          fontIcon="person"></mat-icon>
+        fontIcon="person"></mat-icon>
         <span class="text-xs text-gray-500">
           {{ article.author.name }}
         </span>
-        <ng-container *ngIf="article.authoredAt">
+        @if (article.authoredAt) {
           <mat-icon
             class="ms-2 text-xs text-center text-gray-600"
             aria-hidden="false"
             aria-label="calendar"
-            fontIcon="calendar_month"></mat-icon>
+          fontIcon="calendar_month"></mat-icon>
           <span class="text-xs text-gray-500">
             {{ article.authoredAt | date: 'MMM y' | translateDate }}
           </span>
-        </ng-container>
+        }
         <mat-icon
           class="ms-2 text-xs text-center text-gray-600"
           aria-hidden="false"
           aria-label="schedule"
-          fontIcon="schedule"></mat-icon>
+        fontIcon="schedule"></mat-icon>
         <span class="text-xs text-gray-500">
           {{ article.readingTime | number: '1.0-0' }} dk okuma
         </span>
@@ -47,22 +47,22 @@
       <div
         class="bg-left bg-cover bg-no-repeat bg-blend-lighten"
         [style.background-image]="'url(\'/assets/' + article.image + '.jpg\')'"
-        style="height: 300px"></div>
+      style="height: 300px"></div>
       <div class="content" [innerHTML]="article.content"></div>
       <!-- <p
-        *ngFor="let paragraph of article.paragraphs"
-        class="!mt-6 indent-8 p-4 text-justify text-base lg:text-xl font-sans">
-        {{ paragraph.content }}
-      </p> -->
-    </div>
-  </article>
-  <section class="bg-gray-100 p-24">
-    <div class="container mx-auto flex flex-col items-center justify-around">
-      <div
-        class="bg-profile bg-cover bg-center rounded-full mb-4"
-        style="width: 80px; height: 80px"></div>
-      <h3 class="!text-xl">Yaşar Koca</h3>
-      <p class="!font-ubuntu text-base">Eğitimci | Yazar</p>
-    </div>
-  </section>
-</ng-container>
+      *ngFor="let paragraph of article.paragraphs"
+      class="!mt-6 indent-8 p-4 text-justify text-base lg:text-xl font-sans">
+      {{ paragraph.content }}
+    </p> -->
+  </div>
+</article>
+<section class="bg-gray-100 p-24">
+  <div class="container mx-auto flex flex-col items-center justify-around">
+    <div
+      class="bg-profile bg-cover bg-center rounded-full mb-4"
+    style="width: 80px; height: 80px"></div>
+    <h3 class="!text-xl">Yaşar Koca</h3>
+    <p class="!font-ubuntu text-base">Eğitimci | Yazar</p>
+  </div>
+</section>
+}
