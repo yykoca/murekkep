@@ -1,0 +1,23 @@
+# 1. Node.js'in hafif bir versiyonunu kullanıyoruz
+FROM node:20-alpine
+
+# 2. Konteyner içinde çalışma dizinimizi belirliyoruz
+WORKDIR /app
+
+# 3. Önce sadece package dosyalarını kopyalıyoruz
+# Bu, kodun değişse bile npm install aşamasının önbellekten (cache) hızlı gelmesini sağlar
+COPY package*.json ./
+
+# 4. Bağımlılıkları kuruyoruz
+RUN npm install
+
+# 5. Projenin geri kalan tüm dosyalarını kopyalıyoruz
+COPY . .
+
+# 6. Angular'ın dışarıdan erişilebilmesi için portu açıyoruz
+EXPOSE 4200
+
+# 7. Angular CLI'ı çalıştırıyoruz
+# --host 0.0.0.0: Docker dışından erişim için şart
+# --poll 2000: Docker (özellikle Windows/Mac) dosya değişimlerini bazen kaçırabiliyor, bu her 2 saniyede bir kontrol etmesini sağlar
+CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--poll", "2000"]

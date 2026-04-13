@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mürekkep API | Personal Blog{% endblock %}
+
+{% block body %}
+<style>
+    * { margin: 0; padding: 0 }
+    .container { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif }
+    .header { display: flex; align-items: center; padding: 24px }
+    .header > div { display: flex; flex-direction: column; width: 100%; justify-content: center; margin-left: 20px }
+    img { height: 60px; aspect-ratio: 1/1 }
+    section, article { padding: 16px }
+    h3 { margin-left: 20px; color: #2D3250 }
+    h4 { background-color: #424769; padding: 0.5em; color: white }
+    .request { border: 3px solid #424769 }
+    .content { display: block; overflow-y: auto; overflow-x: hidden; font-size: 0.8em; max-height: 480px; word-wrap: break-word; }
+    pre { width: 95%; margin: 0 auto; padding: 0; }
+    code { white-space: pre-wrap; }
+    .title { padding: 1em; display: flex; align-items: center; border-bottom: 1px solid #F6B17A; }
+    .title > span { background-color: #7077A1; padding: 0.4em; margin-right: 1em; color: white; border-radius: 15% }
+    .title > a { padding: 0.4em; text-decoration: underline; font-weight: bold; letter-spacing: 3px; color: #424769  }
+</style>
+
+<div class="container">
+    <section class="header">
+        <img src="/logo-black.png" alt="logo">
+        <div>
+            <h1>Mürekkep API</h1>
+            <p>Personal Blog</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Usage</h2>
+
+        <article>
+            <h3>Articles</h3>
+            <div class="request">
+                <h4>Get all articles</h4>
+                <div class="title">
+                    <span>GET</span>
+                    <a href="{{ path('article_index') }}">https://api.yasarkoca.xyz/articles</a>
+                </div>
+                <div class="content">
+                    <pre>
+                        <code>
+[
+{% for article in articles %}
+  {
+    "id": "{{ article.id }}",
+    "name": "{{ article.name }}",
+    "description": "{{ article.description }}",
+    "title": "{{ article.title }}",
+    "slug": "{{ article.slug }}",
+    "readingTime": "{{ article.readingTime }}",
+    "content": "{{ article.content }}",
+    "image": "{{ article.image }}",
+    "author": {
+        "id": "{{ article.author.id }}",
+        "name": "{{ article.author.name }}",
+        "slug": "{{ article.author.slug }}",
+        },
+    "authoredAt": "{{ article.authoredAt | date('Y-m-d\TH:i:s') }}",
+    "createdAt": "{{ article.createdAt | date("Y-m-d\TH:i:sP") }}",
+    "updatedAt": "{{ article.updatedAt | date("Y-m-d\TH:i:sP") }}",
+  },
+{% endfor %}
+]
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </article>
+        <article>
+            <h3>Article</h3>
+            <div class="request">
+                <h4>Get article</h4>
+                <div class="title">
+                    <span>GET</span>
+                    <a href="{{ path('article_show', { "slug": "anam" }) }}">https://api.yasarkoca.xyz/articles/anam</a>
+                </div>
+                <div class="content">
+                    <pre>
+                        <code>
+{% set article = articles[0] %}
+  {
+    "id": "{{ article.id }}",
+    "name": "{{ article.name }}",
+    "description": "{{ article.description }}",
+    "title": "{{ article.title }}",
+    "slug": "{{ article.slug }}",
+    "readingTime": "{{ article.readingTime }}",
+    "content": "{{ article.content }}",
+    "image": "{{ article.image }}",
+    "author": {
+        "id": "{{ article.author.id }}",
+        "name": "{{ article.author.name }}",
+        "slug": "{{ article.author.slug }}",
+        },
+    "authoredAt": "{{ article.authoredAt | date('Y-m-d\TH:i:s') }}",
+    "createdAt": "{{ article.createdAt | date("Y-m-d\TH:i:sP") }}",
+    "updatedAt": "{{ article.updatedAt | date("Y-m-d\TH:i:sP") }}",
+  },
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </article>
+    </section>
+</div>
+{% endblock %}

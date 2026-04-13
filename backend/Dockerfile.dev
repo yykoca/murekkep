@@ -1,0 +1,31 @@
+# 1. PHP 8.2 ve FPM tabanlı imaj
+FROM php:8.2-fpm-alpine
+
+# 2. PostgreSQL ve Symfony için gerekli sistem kütüphanelerini kuruyoruz
+# libpq-dev: PostgreSQL sürücüsü için şarttır
+RUN apk add --no-cache \
+    icu-dev \
+    libzip-dev \
+    zlib-dev \
+    libpq-dev \
+    g++ \
+    make \
+    autoconf \
+    && docker-php-ext-install \
+    intl \
+    opcache \
+    zip \
+    pdo_pgsql \
+    pdo_mysql
+
+# 3. Composer'ı resmi imajdan çekiyoruz
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# 4. Çalışma dizini (Symfony dosyalarının duracağı yer)
+WORKDIR /var/www/symfony
+
+# 5. PHP-FPM'i başlatıyoruz
+CMD ["php-fpm"]
+
+# 6. PHP-FPM varsayılan olarak 9000 portunu kullanır
+EXPOSE 9000
