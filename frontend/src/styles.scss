@@ -79,6 +79,22 @@ body {
   }
 }
 
+/* Disable text selection globally, except editable fields. */
+body,
+body *:not(input):not(textarea):not([contenteditable='true']) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Prevent dragging/selecting logos and images. */
+img,
+svg {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
