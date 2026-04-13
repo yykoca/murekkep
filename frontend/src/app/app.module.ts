@@ -9,28 +9,28 @@ import {
   LocationStrategy,
   PathLocationStrategy,
 } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { HomeModule } from '@app/modules/home';
 import { CoreModule } from '@app/core/core.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    AppRoutingModule,
-    CommonModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    SharedModule,
-    CoreModule,
-    HomeModule,
-    FontAwesomeModule,
-  ],
-  providers: [
-    { provide: LocationStrategy, useClass: PathLocationStrategy },
-    // { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-  ],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    bootstrap: [AppComponent], 
+    imports: [
+        AppRoutingModule,
+        CommonModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        SharedModule,
+        CoreModule,
+        HomeModule,
+        FontAwesomeModule
+    ],
+    providers: [
+        { provide: LocationStrategy, useClass: PathLocationStrategy },
+        provideHttpClient(withInterceptorsFromDi()),
+    ]
 })
+
 export class AppModule {}

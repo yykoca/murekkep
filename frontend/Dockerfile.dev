@@ -1,23 +1,23 @@
-# 1. Node.js'in hafif bir versiyonunu kullanıyoruz
+# 1. Use a lightweight Node.js image
 FROM node:20-alpine
 
-# 2. Konteyner içinde çalışma dizinimizi belirliyoruz
+# 2. Set the working directory inside the container
 WORKDIR /app
 
-# 3. Önce sadece package dosyalarını kopyalıyoruz
-# Bu, kodun değişse bile npm install aşamasının önbellekten (cache) hızlı gelmesini sağlar
+# 3. Copy only the package files first
+# This keeps the npm install layer cached even when application code changes
 COPY package*.json ./
 
-# 4. Bağımlılıkları kuruyoruz
-RUN npm install
+# 4. Install dependencies
+RUN npm install --legacy-peer-deps
 
-# 5. Projenin geri kalan tüm dosyalarını kopyalıyoruz
+# 5. Copy the rest of the project files
 COPY . .
 
-# 6. Angular'ın dışarıdan erişilebilmesi için portu açıyoruz
+# 6. Expose the port so Angular is reachable from outside the container
 EXPOSE 4200
 
-# 7. Angular CLI'ı çalıştırıyoruz
-# --host 0.0.0.0: Docker dışından erişim için şart
-# --poll 2000: Docker (özellikle Windows/Mac) dosya değişimlerini bazen kaçırabiliyor, bu her 2 saniyede bir kontrol etmesini sağlar
+# 7. Start the Angular CLI
+# --host 0.0.0.0: required for access from outside Docker
+# --poll 2000: helps Docker, especially on Windows and Mac, detect file changes reliably
 CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--poll", "2000"]
